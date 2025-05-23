@@ -1,14 +1,9 @@
 #!/bin/bash
 
-# Step 1: Clone and build SVF
-if [ ! -d "SVF" ]; then
-    git clone https://github.com/SVF-tools/SVF
-    cd SVF
-    source build.sh
-    cd ..
-else
-    echo "SVF directory already exists. Skipping clone and build."
-fi
+SVF_DIR=/home/k5
+LLVM_DIR=/home/SVF-tools/SVF/llvm-16.0.0.obj
+Z3_DIR=/home/SVF-tools/SVF/z3.obj
+
 
 # Step 2: Check environment variables
 if [ -z "$SVF_DIR" ] || [ -z "$LLVM_DIR" ] || [ -z "$Z3_DIR" ]; then
